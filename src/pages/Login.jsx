@@ -21,7 +21,7 @@ function Login() {
   const { login, isLoading, response } = useLogin();
 
   return (
-    <div className=" grid h-[100vh] grid-rows-[auto_1fr] bg-stone-50 dark:bg-main-900 dark:text-[#fff]">
+    <div className=" grid h-[100vh] grid-rows-[auto_1fr]  bg-main-900 text-[#fff]">
       <div className=" grid grid-cols-2 ">
         <div className="h-full py-20">
           <img
