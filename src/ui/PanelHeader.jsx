@@ -31,6 +31,7 @@ export function PanelHeader() {
     <header className=" grid grid-cols-2 items-center justify-around gap-4 bg-main-950  bg-opacity-10 text-lg shadow-xl dark:bg-opacity-30 sm:flex sm:text-2xl md:text-3xl">
       {dateFns.isSameDay(new Date(year, month, day), new Date()) || (
         <AsideItem
+          isCentered={true}
           icon={<FaArrowAltCircleLeft />}
           linkTo={`/panel/${id}/${dateFns.getYear(new Date())}/${dateFns.getMonth(new Date()) + 1}/${new Date().getDate()}`}
         >
@@ -40,6 +41,7 @@ export function PanelHeader() {
       )}
 
       <AsideItem
+        isCentered={true}
         icon={<IoGrid />}
         linkTo={`/panel/${id}/${year}/${Number(month) + 1}/${day}`}
       >
@@ -47,13 +49,18 @@ export function PanelHeader() {
       </AsideItem>
 
       <AsideItem
+        isCentered={true}
         icon={<FaChartLine />}
         linkTo={`/analytics/${id}/${year}/${Number(month) + 1}/${day}`}
       >
         Analytics
       </AsideItem>
       {(user?.id === panel?.manger || user?.role === "admin") && (
-        <AsideItem icon={<FaGears />} linkTo={`/mange-access/${id}`}>
+        <AsideItem
+          isCentered={true}
+          icon={<FaGears />}
+          linkTo={`/mange-access/${id}`}
+        >
           mange panel
         </AsideItem>
       )}

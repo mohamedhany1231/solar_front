@@ -7,13 +7,14 @@ export function AsideItem({
   linkTo,
   showIcon = true,
   handleClick,
+  isCentered = false,
 }) {
   const { pathname: path } = useLocation();
   const { isDarkMode } = useDarkMode();
 
   return (
     <Link
-      className=" flex justify-center p-2 align-middle  shadow-sm transition-all  duration-300 hover:bg-stone-200  dark:hover:bg-main-800 sm:p-4 "
+      className={` flex ${isCentered && "justify-center"}  p-2 align-middle  shadow-sm transition-all  duration-300 hover:bg-stone-200  dark:hover:bg-main-800 sm:p-4 `}
       to={linkTo}
       onClick={handleClick}
     >
