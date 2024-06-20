@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const base_url = import.meta.env.prod
+const base_url = import.meta.env.PROD
   ? import.meta.env.VITE_PROD_URL
   : import.meta.env.VITE_DEV_URL;
 
