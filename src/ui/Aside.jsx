@@ -1,49 +1,30 @@
-import { IoNewspaperOutline } from "react-icons/io5";
-import { FaChartLine } from "react-icons/fa6";
-import { MdSpeed } from "react-icons/md";
-import { IoMdWarning } from "react-icons/io";
-import { FaUserAlt } from "react-icons/fa";
-import { IoMdSettings } from "react-icons/io";
+import { Link } from "react-router-dom";
 
-function Aside() {
-  return (
-    <aside className="p-10 shadow-xl grid grid-rows-[auto_2fr_1fr] h-[100vh] ">
-      <h2 className=" text-7xl mb-10 font-bold tracking-tighter">Solar</h2>
-      <AsideTopList />
-      <AsideBottomList />
-    </aside>
-  );
-}
+import Icon from "./Icon";
+import ToggleDarkMode from "./ToggleDarkMode";
+import { MdMenu } from "react-icons/md";
+import { useState } from "react";
+import NavLinks from "./NavLinks";
 
-function AsideTopList() {
-  return (
-    <ul className=" flex flex-col gap-5">
-      <AsideItem icon={<IoNewspaperOutline />}>Overview</AsideItem>
-      <AsideItem icon={<FaChartLine />}>Analytics</AsideItem>
-      <AsideItem icon={<MdSpeed />}>Performance</AsideItem>
-      <AsideItem icon={<IoMdWarning />}>Warnings</AsideItem>
-    </ul>
-  );
-}
+function Aside({ isLargeScreen }) {
+  const [isOpen, setIsOpen] = useState(false);
 
-function AsideBottomList() {
+  const close = () => setIsOpen(false);
   return (
-    <ul className=" flex flex-col gap-5 align-bottom justify-end">
-      <AsideItem icon={<IoMdSettings />}>Settings</AsideItem>
-      <AsideItem icon={<FaUserAlt />}>Profile</AsideItem>
-    </ul>
-  );
-}
-
-function AsideItem({ children, icon }) {
-  const fontSize = "text-2xl";
-  return (
-    <li
-      className={` ${fontSize} p-4 hover:bg-stone-100 transition-all duration-300 shadow-sm flex align-middle`}
-    >
-      {icon}
-      <span className="ml-5">{children}</span>
-    </li>
+    <nav className="flex items-center gap-4 bg-main-50 p-4 text-main-900 shadow-xl dark:bg-main-900 dark:text-[#fff] dark:shadow-main-800 sm:p-6 lg:grid lg:h-[100vh] lg:grid-rows-[auto_1fr] lg:items-start lg:p-10 ">
+      <div className=" grow lg:mb-10">
+        <Icon />
+      </div>
+      {(isOpen || isLargeScreen) && (
+        <NavLinks isLargeScreen={isLargeScreen} close={close} />
+      )}
+      <button className=" text-5xl lg:hidden " onClick={() => setIsOpen(true)}>
+        <MdMenu />
+      </button>
+      <span className=" lg:hidden ">
+        <ToggleDarkMode />
+      </span>
+    </nav>
   );
 }
 
