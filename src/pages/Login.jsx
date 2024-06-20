@@ -22,7 +22,6 @@ function Login() {
 
   return (
     <div className=" grid h-[100vh] grid-rows-[auto_1fr] bg-stone-50 dark:bg-main-900 dark:text-[#fff]">
-      <Header />
       <div className=" grid grid-cols-2 ">
         <div className="h-full py-20">
           <img

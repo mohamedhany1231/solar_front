@@ -28,7 +28,7 @@ export function MangeAccessUserRow({ user: { email, photo, name, _id: id } }) {
     toast.error("error removing user ");
   }
 
-  const canRemove = currentUser._id !== id;
+  const canRemove = currentUser?._id !== id;
   return (
     <>
       <div className=" mx-auto flex items-center  sm:mx-0">

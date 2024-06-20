@@ -74,7 +74,7 @@ function WarningsSettings() {
         {Object.keys(user?.settings).map((warningKey) => (
           <WarningsSettingRow
             type={warningKey}
-            selected={user.settings[warningKey]}
+            selected={user?.settings[warningKey]}
           />
         ))}
       </div>

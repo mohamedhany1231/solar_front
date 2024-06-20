@@ -52,7 +52,7 @@ export function PanelHeader() {
       >
         Analytics
       </AsideItem>
-      {(user.id === panel?.manger || user.role === "admin") && (
+      {(user?.id === panel?.manger || user?.role === "admin") && (
         <AsideItem icon={<FaGears />} linkTo={`/mange-access/${id}`}>
           mange panel
         </AsideItem>

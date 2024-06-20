@@ -16,7 +16,7 @@ function NavLinks({ isLargeScreen, close }) {
 
   if (isLoading) return <Loader />;
 
-  const isAdmin = user.role === "admin";
+  const isAdmin = user?.role === "admin";
   const SmallScreen = (
     <>
       <div

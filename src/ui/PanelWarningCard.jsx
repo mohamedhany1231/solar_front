@@ -18,7 +18,7 @@ export function PanelWarningCard({ panel: { name, id, warnings } }) {
     const warningsObj = { low: [], mid: [], high: [] };
 
     warnings.forEach((warning) =>
-      warningsObj[user.settings[warning.type] || "mid"].push(warning),
+      warningsObj[user?.settings[warning.type] || "mid"].push(warning),
     );
     return warningsObj;
   }

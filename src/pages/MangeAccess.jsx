@@ -46,7 +46,7 @@ function MangeAccess() {
         <div className=" grow">
           <div className=" mx-auto grid w-[90%]  items-center justify-center gap-2 p-4 text-base sm:grid-cols-[1fr_1fr_auto] sm:justify-between lg:text-xl xl:w-[70%]">
             {viewers?.map((user) => (
-              <MangeAccessUserRow user={user} key={user.id} />
+              <MangeAccessUserRow user={user} key={user?.id} />
             ))}
           </div>
         </div>

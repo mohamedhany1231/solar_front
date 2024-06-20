@@ -33,18 +33,17 @@ function Profile() {
 
   if (isLoading) return <Loader />;
 
-
   return (
     <div className=" relative m-10 mx-auto  flex w-[70%] flex-col items-center rounded-3xl border-2   p-6 text-center dark:border-main-700   sm:flex-row sm:justify-start sm:p-0  sm:pr-16  lg:w-[70%]">
       <img
-        src={user.photo || "/no-picture.webp"}
+        src={user?.photo || "/no-picture.webp"}
         alt="profile "
         className=" h-40 w-40 rounded-full object-cover sm:h-60 sm:w-[35%] sm:rounded-none  sm:rounded-r-3xl"
       />
 
       <div className=" mt-4 grow">
         <h2 className=" mb-4 mt-4 text-2xl font-bold lg:text-4xl 2xl:text-3xl ">
-          {user.name}
+          {user?.name}
         </h2>
         <p className=" text-xl text-gray-400">test@test.com</p>
 
@@ -62,29 +61,14 @@ function Profile() {
                 }}
                 error={response?.error}
               />
-              {/* <InputRow
-                fieldName={"email"}
-                type={"email"}
-                error={errors?.email?.message}
-                register={{
-                  ...register("email", {
-                    required: { value: true, message: "field required" },
-                    value: user.email,
 
-                    pattern: {
-                      value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
-                      message: "please provide a valid email",
-                    },
-                  }),
-                }}
-              /> */}
               <InputRow
                 fieldName={"name"}
                 type={"text"}
                 register={{
                   ...register("name", {
                     required: { value: true, message: "field required" },
-                    value: user.name,
+                    value: user?.name,
 
                     minLength: {
                       value: 3,

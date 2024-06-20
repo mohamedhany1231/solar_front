@@ -26,7 +26,7 @@ function Overview() {
   const isLoading =
     isLoading1 || isLoading2 || isLoading3 || isLoading4 || loadingUser;
   if (isLoading) return <Loader />;
-  if (user.panels.length === 0) return <Empty resourceName={`panels `} />;
+  if (user?.panels?.length === 0) return <Empty resourceName={`panels `} />;
 
   const warningsCount = panels.reduce(
     (acc, panel) => panel.warnings.length + acc,
