@@ -44,7 +44,7 @@ function Login() {
                 Please log in to access your solar panel dashboard.
               </h3>
 
-              <p className=" mb-8 text-lg tracking-wide text-gray-600 dark:text-gray-400">
+              <p className=" mb-8 text-lg tracking-wide text-gray-400">
                 Monitor, analyze, and optimize your solar panel system. Sign in
                 now.
               </p>
@@ -53,11 +53,13 @@ function Login() {
                 type={"email"}
                 register={{ ...register("email") }}
                 error={response}
+                disableDarkMode={true}
               />
               <InputRow
                 fieldName={"password"}
                 type={"password"}
                 register={{ ...register("password") }}
+                disableDarkMode={true}
               />
               <button
                 className=" text-bold ml-auto mr-4 mt-4 w-fit rounded-full  bg-main-500 px-8 py-4 text-3xl font-bold text-[#fff] hover:bg-main-400"

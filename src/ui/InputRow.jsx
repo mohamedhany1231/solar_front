@@ -1,4 +1,11 @@
-function InputRow({ fieldName, register, type, error, value }) {
+function InputRow({
+  fieldName,
+  register,
+  type,
+  error,
+  value,
+  disableDarkMode,
+}) {
   return (
     <div className=" text-base sm:text-lg md:text-xl ">
       <div className=" flex justify-between">
@@ -15,7 +22,7 @@ function InputRow({ fieldName, register, type, error, value }) {
       <input
         type={type}
         value={value}
-        className=" block w-full  rounded-[2rem]  border-2 border-main-800 bg-main-50 bg-opacity-50 px-3 py-1 outline-none focus:border-main-400 dark:border-main-800 dark:bg-main-800 dark:focus:border-main-600  sm:px-6 sm:py-2"
+        className={` block w-full  rounded-[2rem]  border-2  bg-opacity-50 px-3 py-1 outline-none  ${disableDarkMode ? "border-main-800 bg-main-800 focus:border-main-600" : "border-main-800 bg-main-50 focus:border-main-400 dark:border-main-800 dark:bg-main-800 dark:focus:border-main-600"}  sm:px-6 sm:py-2`}
         {...register}
       ></input>
     </div>
