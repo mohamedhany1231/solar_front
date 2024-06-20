@@ -27,9 +27,9 @@ export function OverviewPanelCard({
       onClick={() => navigate(`/panel/${id}`)}
       className="   grid cursor-pointer grid-cols-[1fr_2fr] gap-4 rounded-2xl bg-stone-100 py-4 shadow-lg  transition-colors hover:border hover:border-main-200 dark:border-orange-500 dark:bg-main-800 dark:hover:border-orange-200 sm:gap-0 sm:py-6"
     >
-      <span className=" dark:border-main-700w-auto mx-auto flex items-center justify-center px-4 pb-0">
+      <div className=" dark:border-main-700w-auto mx-auto flex items-center justify-center px-2 pb-0 xl:px-4">
         <img src="./solar.png" alt="solar panel" />
-      </span>
+      </div>
       <div className="  border-l pl-2 text-sm dark:border-main-700 sm:text-base xl:pl-8 xl:text-lg">
         <div className=" flex flex-col justify-between px-2 sm:flex-row">
           <h3 className=" bold mb-4 text-center  text-lg text-gray-700 dark:text-gray-300 sm:text-xl md:text-2xl">

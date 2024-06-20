@@ -49,7 +49,6 @@ function Overview() {
               icon={<FaBolt />}
               value={totalEnergy.current}
               unit={"kw"}
-              //   orangeBorder={true}
             />
           </div>
           <div className=" col-span-3 flex">
@@ -99,7 +98,7 @@ function Overview() {
         <div className=" col-span-5 mt-6 md:col-span-3">
           <OverviewBarChart />
         </div>
-        <div className="col-span-5 border-l  border-gray-200 p-4 dark:border-main-700 md:col-span-2 ">
+        <div className="col-span-5 border-gray-200  p-4 dark:border-main-700 md:col-span-2 md:border-l ">
           <div
             className=" grid  gap-4 
            sm:grid-cols-2 md:grid-cols-1 "

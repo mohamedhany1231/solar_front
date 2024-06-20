@@ -28,7 +28,7 @@ export function PanelHeader() {
   dateFns.isSameDay(new Date(year, month, day), new Date());
 
   return (
-    <header className=" flex items-center justify-around gap-4  bg-main-950 bg-opacity-10 text-lg shadow-xl dark:bg-opacity-30 sm:text-2xl md:text-3xl">
+    <header className=" grid grid-cols-2 items-center justify-around gap-4 bg-main-950  bg-opacity-10 text-lg shadow-xl dark:bg-opacity-30 sm:flex sm:text-2xl md:text-3xl">
       {dateFns.isSameDay(new Date(year, month, day), new Date()) || (
         <AsideItem
           icon={<FaArrowAltCircleLeft />}
