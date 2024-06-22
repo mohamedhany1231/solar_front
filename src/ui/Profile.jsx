@@ -34,11 +34,11 @@ function Profile() {
   if (isLoading) return <Loader />;
 
   return (
-    <div className=" relative m-10 mx-auto  flex w-[70%] flex-col items-center rounded-3xl border-2   p-6 text-center dark:border-main-700   sm:flex-row sm:justify-start sm:p-0  sm:pr-16  lg:w-[70%]">
+    <div className=" relative m-10 mx-auto  flex w-[100%] flex-col items-center overflow-hidden rounded-3xl border-2 p-6   text-center dark:border-main-700 sm:w-[70%]   sm:flex-row sm:justify-start sm:p-0  sm:pr-16  lg:w-[70%]">
       <img
         src={user?.photo || "/no-picture.webp"}
         alt="profile "
-        className=" h-40 w-40 rounded-full object-cover sm:h-60 sm:w-[35%] sm:rounded-none  sm:rounded-r-3xl"
+        className="  h-40 w-40 rounded-full object-cover sm:h-60 sm:w-[40%]  sm:rounded-none sm:rounded-r-3xl"
       />
 
       <div className=" mt-4 grow">

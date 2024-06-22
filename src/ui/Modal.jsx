@@ -44,7 +44,7 @@ function Window({ children, title }) {
       >
         <div
           onClick={stopPropagation}
-          className=" fixed left-[50%] top-[50%] min-w-[80%] translate-x-[-50%]  translate-y-[-50%] transform rounded-3xl border-2 border-main-200 bg-main-100 px-3 py-6 text-main-900  dark:border-main-700 dark:bg-main-900 dark:text-stone-50 sm:min-w-[50%] sm:px-6 sm:py-12"
+          className=" fixed left-[50%] top-[50%] min-w-[90%] translate-x-[-50%]  translate-y-[-50%] transform rounded-3xl border-2 border-main-200 bg-main-100 px-3 py-6 text-main-900  dark:border-main-700 dark:bg-main-900 dark:text-stone-50 sm:min-w-[50%] sm:px-6 sm:py-12"
         >
           <button
             className=" absolute right-4 top-4 transform text-3xl transition-all hover:scale-110 hover:text-main-600 "
@@ -53,7 +53,7 @@ function Window({ children, title }) {
             <IoMdClose />
           </button>
           {title && (
-            <h2 className=" mr-auto inline-block border-b-2 border-main-700 pb-2 pl-4  text-start text-xl font-bold capitalize sm:text-2xl lg:text-4xl ">
+            <h2 className=" mr-auto inline-block border-b-2 border-main-700 pb-2 pl-4 pr-6 text-start  text-xl font-bold capitalize sm:pr-0 sm:text-2xl lg:text-4xl ">
               {title}
             </h2>
           )}

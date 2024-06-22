@@ -34,7 +34,7 @@ const Services = [
 function Home() {
   return (
     <div className="flex flex-col gap-8 bg-[#050D16] pb-20 sm:gap-12 md:gap-16 lg:gap-20">
-      <div className=" h-[100vh] bg-[#494949] bg-[url(/beautiful-alternative-energy-plant-with-solar-panels.jpg)] bg-cover bg-blend-multiply sm:h-[70vh]  ">
+      <div className=" h-[100vh] bg-[#494949] bg-[url(./beautiful-alternative-energy-plant-with-solar-panels.jpg)] bg-cover bg-blend-multiply sm:h-[70vh]  ">
         <div className=" flex h-full w-[100%] flex-col items-center justify-center  gap-16 text-center sm:ml-10 md:ml-6 md:w-[40%] md:items-start md:gap-20 md:text-start lg:ml-16 ">
           <div>
             <h1 className=" text-2xl font-bold capitalize tracking-wider text-[#fff] sm:text-4xl md:text-5xl lg:text-7xl  ">

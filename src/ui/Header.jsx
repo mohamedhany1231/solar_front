@@ -17,23 +17,11 @@ function Header() {
         <img
           src={user?.photo || "/no-picture.webp"}
           alt="profile "
-          className="h-14 w-14 rounded-full"
+          className="h-14 w-14 rounded-full object-cover"
         />
       </Link>
 
       <div className="flex gap-10">
-        {/* <Link
-          to="."
-          className="hover:stone-500 h-full py-6  text-xl transition-transform hover:translate-y-[-0.25rem] hover:underline"
-        >
-          Home
-        </Link>
-        <Link
-          to="panel"
-          className="hover:stone-500 h-full py-6  text-xl transition-transform hover:translate-y-[-0.25rem] hover:underline"
-        >
-          Panel
-        </Link> */}
         <ToggleDarkMode />
       </div>
     </header>

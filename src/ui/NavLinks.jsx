@@ -1,7 +1,7 @@
 import { IoNewspaperOutline } from "react-icons/io5";
 import { FaSolarPanel } from "react-icons/fa6";
 import { TiUserAdd } from "react-icons/ti";
-import { IoMdSettings } from "react-icons/io";
+import { IoMdClose, IoMdSettings } from "react-icons/io";
 import { AsideItem } from "./AsideItem";
 
 import { IoMdWarning } from "react-icons/io";
@@ -20,9 +20,15 @@ function NavLinks({ isLargeScreen, close }) {
   const SmallScreen = (
     <>
       <div
-        className="absolute left-[50%] top-[50%] flex  h-[100vh] w-[100%] translate-x-[-50%] translate-y-[-50%] transform items-center justify-center bg-black bg-opacity-70 text-stone-50  
+        className="absolute left-[50%] top-[50%] flex  h-[100vh] w-[100%] translate-x-[-50%] translate-y-[-50%] transform items-center justify-center bg-black bg-opacity-90 text-stone-50  
 "
       >
+        <button
+          className=" absolute right-4 top-4 transform text-5xl transition-all hover:scale-110 hover:text-main-600 "
+          onClick={close}
+        >
+          <IoMdClose />
+        </button>
         <div className=" flex flex-col items-center text-center text-4xl font-bold">
           <AsideItem
             showIcon={isLargeScreen}
