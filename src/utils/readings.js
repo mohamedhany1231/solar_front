@@ -1,4 +1,5 @@
 import axios from "axios";
+import * as dateFns from "date-fns";
 
 const base_url = import.meta.env.PROD
   ? import.meta.env.VITE_PROD_URL
@@ -11,17 +12,23 @@ const instance = axios.create({
 });
 
 export const getLatestReading = async function (id, date = new Date()) {
+  if (dateFns.isSameDay(date, new Date())) date = new Date();
+
   const res = await instance.get(`/readings/${id}/latest/${date}`);
 
   return res.data.data.reading;
 };
 
 export const getRecentReadings = async function (id, date = new Date()) {
+  if (dateFns.isSameDay(date, new Date())) date = new Date();
+
   const res = await instance.get(`/readings/${id}/recent/${date}`);
   return res.data.data.readings;
 };
 
 export const getMonthlyEnergy = async function (id, date = new Date()) {
+  if (dateFns.isSameDay(date, new Date())) date = new Date();
+
   const res = await instance.get(`/readings/${id}/monthly/${date}`);
   return res.data.data.readings;
 };

@@ -18,6 +18,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import axios from "axios";
 import { Toaster } from "react-hot-toast";
 import AllPanels from "./pages/AllPanels";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 axios.defaults.withCredentials = true;
 
@@ -55,6 +56,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
       <Toaster />
+      <ReactQueryDevtools />
     </QueryClientProvider>
   );
 }

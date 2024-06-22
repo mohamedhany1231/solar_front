@@ -36,7 +36,7 @@ export function OverviewPanelCard({
             {title}
           </h3>
           <p>
-            ⚡ {reading.current}
+            ⚡ {reading.power}
             <span className=" text-sm sm:text-base">kwh</span>
           </p>
         </div>

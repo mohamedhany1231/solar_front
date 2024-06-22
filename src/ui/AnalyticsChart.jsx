@@ -51,19 +51,19 @@ function AnalyticsChart() {
 
   const processedReadings = readings.map((r) => {
     return {
-      current: r.current,
+      power: r.power,
       label: `${months[r.date.month]} ${r.date.day}`,
     };
   });
 
   const colors = isDarkMode
     ? {
-        current: { stroke: "#4841ce", fill: "#4f46e5" },
+        power: { stroke: "#4841ce", fill: "#4f46e5" },
         text: "#e5e7eb",
         background: "#18212f",
       }
     : {
-        current: { stroke: "#4f46e5", fill: "#c7d2fe" },
+        power: { stroke: "#4f46e5", fill: "#c7d2fe" },
         text: "#374151",
         background: "#fff",
       };
@@ -84,9 +84,9 @@ function AnalyticsChart() {
           />
           <CartesianGrid strokeDasharray={4} />
           <Area
-            dataKey={"current"}
-            stroke={colors.current.stroke}
-            fill={colors.current.fill}
+            dataKey={"power"}
+            stroke={colors.power.stroke}
+            fill={colors.power.fill}
             strokeWidth={3}
           />
           <Tooltip contentStyle={{ backgroundColor: colors.background }} />

@@ -29,10 +29,10 @@ function AnalyticsCards() {
   if (isLoading) return <Loader />;
   if (readings.length === 0) return <Empty resourceName={`readings `} />;
 
-  const weakReadings = readings.slice(1, 7);
+  const weakReadings = readings.slice(0, 6);
   const data = weakReadings.reduce((acc, read) => {
     return {
-      current: acc.current || 0 + read.current,
+      power: acc.power || 0 + read.power,
       temperature: acc.temperature || 0 + read.temperature,
       pressure: acc.pressure || 0 + read.pressure,
       intensity: acc.intensity || 0 + read.intensity,
@@ -42,11 +42,11 @@ function AnalyticsCards() {
   return (
     <>
       <AnalyticsCard
-        value={data.current}
+        value={data.power}
         color={"#4c36fa"}
         icon={<ImPower />}
-        label={"current"}
-        unit="ma"
+        label={"power"}
+        unit="kw"
       />
       <AnalyticsCard
         value={data.temperature}

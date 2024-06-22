@@ -26,7 +26,16 @@ function Panel() {
   if (!reading)
     return <Empty resourceName={`readings at ${date.toDateString()} `} />;
 
-  const { temperature, intensity, current, pressure, color } = reading;
+  const {
+    temperature,
+    intensity,
+    power,
+    pressure,
+    color,
+    current,
+    humidity,
+    date: readingDate,
+  } = reading;
 
   const stateEmoji =
     panel.state === "offline" ? "⚫" : panel.state === "online" ? "🟢" : "🔴";
@@ -47,7 +56,11 @@ function Panel() {
         <div className="grid gap-4 px-4 py-8 md:text-xl lg:grid-cols-[1fr_auto] 2xl:text-2xl">
           <div className="py-8">
             <div className="mb-4 grid grid-cols-2 py-6 shadow-sm hover:bg-stone-100 dark:hover:bg-main-800">
-              <p className="">⚡ current</p>
+              <p className="">⚡ power</p>
+              <p className=" text-right lg:text-center ">{power} mA</p>
+            </div>
+            <div className="mb-4 grid grid-cols-2 py-6 shadow-sm hover:bg-stone-100 dark:hover:bg-main-800">
+              <p className="">🔌 current</p>
               <p className=" text-right lg:text-center ">{current} mA</p>
             </div>
             <div className="mb-4 grid grid-cols-2 py-6 shadow-sm hover:bg-stone-100 dark:hover:bg-main-800">
@@ -55,6 +68,10 @@ function Panel() {
               <p className=" text-right lg:text-center ">
                 {temperature} &deg;C
               </p>
+            </div>
+            <div className="mb-4 grid grid-cols-2 py-6 shadow-sm hover:bg-stone-100 dark:hover:bg-main-800">
+              <p className="">💦 humidity</p>
+              <p className=" text-right lg:text-center ">{humidity}AH</p>
             </div>
             <div className="mb-4 grid grid-cols-2 py-6 shadow-sm hover:bg-stone-100 dark:hover:bg-main-800">
               <p className="">🗜 pressure</p>
@@ -67,6 +84,15 @@ function Panel() {
             <div className="mb-4 grid grid-cols-2 py-6 shadow-sm hover:bg-stone-100 dark:hover:bg-main-800">
               <p className="">🎨 Color</p>
               <p className=" text-right lg:text-center ">{color} cd</p>
+            </div>
+            <div className="mb-4 grid grid-cols-2 py-6 shadow-sm hover:bg-stone-100 dark:hover:bg-main-800">
+              <p className="">📆 Date</p>
+              <p className=" text-right lg:text-center ">
+                {dateFns.format(
+                  new Date(new Date(readingDate)),
+                  "dd/MM/yyyy HH:mm",
+                )}
+              </p>
             </div>
           </div>
           <div className="overflow-hidden bg-stone-100 p-6 shadow-lg dark:bg-main-950 ">

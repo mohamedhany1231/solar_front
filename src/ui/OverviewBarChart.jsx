@@ -23,7 +23,7 @@ function OverviewBarChart() {
         <XAxis dataKey="panel.name" />
         <YAxis unit="KW" />
         <Legend />
-        <Bar dataKey="current" fill="#FFAC34" />
+        <Bar dataKey="power" fill="#FFAC34" />
         <Tooltip contentStyle={{ backgroundColor: "#18212f" }} />
       </BarChart>
     </ResponsiveContainer>

@@ -53,19 +53,19 @@ function AnalyticsBarChart() {
 
   const processedReadings = readings.map((r) => {
     return {
-      current: r.current,
+      power: r.power,
       label: `${months[r.date.month]}`,
     };
   });
 
   const colors = isDarkMode
     ? {
-        current: { stroke: "#FFAC34", fill: "#feb855" },
+        power: { stroke: "#FFAC34", fill: "#feb855" },
         text: "#e5e7eb",
         background: "#18212f",
       }
     : {
-        current: { stroke: "#FFAC34", fill: "#feb855" },
+        power: { stroke: "#FFAC34", fill: "#feb855" },
         text: "#374151",
         background: "#fff",
       };
@@ -86,9 +86,9 @@ function AnalyticsBarChart() {
         />
         <Legend />
         <Bar
-          dataKey="current"
-          fill={colors.current.fill}
-          stroke={colors.current.stroke}
+          dataKey="power"
+          fill={colors.power.fill}
+          stroke={colors.power.stroke}
         />
         {/* <Bar dataKey="used" fill="#FFF034" />
         <Bar dataKey="saved" fill="#FFAC34" /> */}

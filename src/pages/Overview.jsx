@@ -47,7 +47,7 @@ function Overview() {
             <OverviewCard
               title={"Energy Generated"}
               icon={<FaBolt />}
-              value={totalEnergy.current}
+              value={totalEnergy.power}
               unit={"kw"}
             />
           </div>

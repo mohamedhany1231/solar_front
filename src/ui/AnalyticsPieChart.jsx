@@ -84,7 +84,7 @@ const renderActiveShape = (props) => {
         y={ey}
         textAnchor={textAnchor}
         fill="#808080"
-      >{`${payload?.current}W`}</text>
+      >{`${payload?.power}W`}</text>
       <text
         x={ex + (cos >= 0 ? 1 : -1) * 12}
         y={ey}
@@ -120,12 +120,12 @@ function AnalyticsPieChart() {
   if (readings.length === 0) return <Empty resourceName={`readings `} />;
 
   const weekReadings = readings.slice(0, 7);
-  const currentYear = dateFns.getYear(Date.now());
+  const powerYear = dateFns.getYear(Date.now());
   const data = weekReadings.map((read) => {
     return {
       ...read,
       label: `${dateFns.format(
-        new Date(currentYear, read.date.month, read.date.day),
+        new Date(powerYear, read.date.month, read.date.day),
         "EEEE",
       )} \n   `,
       labelSub: `${read.date.month}/${read.date.day}`,
@@ -146,7 +146,7 @@ function AnalyticsPieChart() {
       <PieChart>
         <Pie
           data={data}
-          dataKey="current"
+          dataKey="power"
           nameKey="label"
           cx="50%"
           cy="50%"

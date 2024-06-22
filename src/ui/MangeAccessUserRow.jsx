@@ -6,7 +6,7 @@ import Modal from "./Modal";
 import { useParams } from "react-router-dom";
 
 export function MangeAccessUserRow({ user: { email, photo, name, _id: id } }) {
-  const { user: currentUser, isLoading: isLoadingUser } = useUser();
+  const { user: powerUser, isLoading: isLoadingUser } = useUser();
 
   const { id: panelId } = useParams();
   const { removeViewer, isLoading } = useRemoveViewer();
@@ -28,7 +28,7 @@ export function MangeAccessUserRow({ user: { email, photo, name, _id: id } }) {
     toast.error("error removing user ");
   }
 
-  const canRemove = currentUser?._id !== id;
+  const canRemove = powerUser?._id !== id;
   return (
     <>
       <div className=" mx-auto flex items-center  sm:mx-0">
