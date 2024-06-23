@@ -5,7 +5,7 @@ export default function useLogin() {
   const queryClient = useQueryClient();
 
   const {
-    mutate: login,
+    mutateAsync: login,
     isPending,
     data: response,
   } = useMutation({

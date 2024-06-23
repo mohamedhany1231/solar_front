@@ -14,7 +14,11 @@ const login = async function (loginCredentials) {
   try {
     await instance.post(`users/login`, loginCredentials);
   } catch (err) {
-    return err?.response?.data?.message || "unexpected error occurred";
+    return {
+      error:
+        err?.response?.data?.message ||
+        "unexpected error occurred , try again in a few seconds",
+    };
   }
 };
 
