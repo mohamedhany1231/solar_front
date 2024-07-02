@@ -57,7 +57,7 @@ function Panel() {
           <div className="py-8">
             <div className="mb-4 grid grid-cols-2 py-6 shadow-sm hover:bg-stone-100 dark:hover:bg-main-800">
               <p className="">⚡ power</p>
-              <p className=" text-right lg:text-center ">{power} mA</p>
+              <p className=" text-right lg:text-center ">{power} watt</p>
             </div>
             <div className="mb-4 grid grid-cols-2 py-6 shadow-sm hover:bg-stone-100 dark:hover:bg-main-800">
               <p className="">🔌 current</p>
