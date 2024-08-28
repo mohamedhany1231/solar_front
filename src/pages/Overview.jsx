@@ -47,7 +47,7 @@ function Overview() {
             <OverviewCard
               title={"Energy Generated"}
               icon={<FaBolt />}
-              value={totalEnergy.power}
+              value={totalEnergy?.power}
               unit={"kw"}
             />
           </div>
@@ -55,7 +55,7 @@ function Overview() {
             <OverviewCard
               title={"average temperature"}
               icon={<BsThermometerSun />}
-              value={totalEnergy.temperature}
+              value={totalEnergy?.temperature}
               unit={"°c"}
             />
           </div>
@@ -83,14 +83,18 @@ function Overview() {
           <OverviewCard
             icon={<FaThinkPeaks />}
             title={"Peak performance time"}
-            value={`${time.startTime}:00 to ${time.endTime}:00`}
+            value={
+              time?.startTime && time?.endTime
+                ? `${time?.startTime}:00 to ${time?.endTime}:00`
+                : "not enough data"
+            }
             iconBg="#7fff43"
           />
 
           <OverviewCard
             icon={<TbSolarPanel2 />}
             title={"Best preforming panel"}
-            value={bestPanel.name}
+            value={bestPanel?.name}
             iconBg={"#fba13b"}
             largeText={true}
           />

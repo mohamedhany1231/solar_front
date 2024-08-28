@@ -44,7 +44,7 @@ function AllPanels() {
           ))}
         </div>
       </div>
-      <div className=" mt-4 flex justify-center">
+      <div className=" mt-4 flex justify-center text-stone-400">
         <Pagination
           count={pagesCount}
           page={page}

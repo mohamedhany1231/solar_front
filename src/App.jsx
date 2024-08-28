@@ -1,4 +1,9 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import {
+  RouterProvider,
+  createBrowserRouter,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import AppLayout from "./ui/AppLayout";
 import Panel from "./pages/Panel";
 import Home from "./pages/Home";
@@ -19,6 +24,7 @@ import axios from "axios";
 import { Toaster } from "react-hot-toast";
 import AllPanels from "./pages/AllPanels";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { useEffect } from "react";
 
 axios.defaults.withCredentials = true;
 
@@ -49,6 +55,7 @@ const router = createBrowserRouter([
   { path: "/", element: <Home /> },
   { path: "login", element: <Login /> },
 ]);
+
 function App() {
   const queryClient = new QueryClient();
 
@@ -56,7 +63,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
       <Toaster />
-      <ReactQueryDevtools />
+      {/* <ReactQueryDevtools /> */}
     </QueryClientProvider>
   );
 }

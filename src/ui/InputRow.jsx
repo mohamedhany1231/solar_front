@@ -13,7 +13,7 @@ function InputRow({
           {fieldName === "confirmPassword" ? "confirm password" : fieldName}
         </label>
         {error && (
-          <p className=" ml-auto  inline-block text-sm  font-bold text-red-500   sm:text-base md:text-lg lg:text-xl ">
+          <p className=" ml-auto  inline-block whitespace-nowrap  text-sm font-bold   text-red-500 sm:text-base md:text-lg lg:text-xl ">
             ** {error} **
           </p>
         )}

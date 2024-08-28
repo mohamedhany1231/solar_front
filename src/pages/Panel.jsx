@@ -1,5 +1,5 @@
 import useLatestReading from "../hooks/readings/useLatestReading";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Loader from "../ui/Loader";
 import usePanel from "../hooks/panels/usePanel";
 import * as dateFns from "date-fns";
@@ -21,6 +21,7 @@ function Panel() {
   const { reading, isLoading: isLoading2 } = useLatestReading(id, date);
 
   const { panel, isLoading } = usePanel(id);
+  const navigate = useNavigate();
 
   if (isLoading || isLoading2) return <Loader />;
   if (!reading)
@@ -39,6 +40,10 @@ function Panel() {
 
   const stateEmoji =
     panel.state === "offline" ? "⚫" : panel.state === "online" ? "🟢" : "🔴";
+
+  window.onpopstate = () => {
+    navigate("/panels");
+  };
 
   return (
     <div>

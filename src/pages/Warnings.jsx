@@ -51,6 +51,7 @@ function Warnings() {
             },
           }}
           size={isLargeScreen ? "large" : "small"}
+          disabled={pagesCount === 1}
         />
       </div>
     </div>
