@@ -1,8 +1,11 @@
-# React + Vite
+# Smart Solar front end
+##links 
+### live site
+https://solar-front-theta.vercel.app/
+### backend code 
+https://github.com/mohamedhany1231/solar-back
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## about 
+this was my graduation project working with embedded systems  engineer 
+my role in the project was to develope the entire website front to back and write python script that will run on the raspberry pi to send sensors readings to the api
+website mad to store data and provide dashboard for readings .   
