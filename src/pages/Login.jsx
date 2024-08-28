@@ -77,12 +77,14 @@ function Login() {
                 register={{ ...register("email") }}
                 error={response?.error}
                 disableDarkMode={true}
+                value={"test@test.com"}
               />
               <InputRow
                 fieldName={"password"}
                 type={"password"}
                 register={{ ...register("password") }}
                 disableDarkMode={true}
+                value={"test1234"}
               />
               <button
                 className=" text-bold ml-auto mr-4 mt-4 w-fit rounded-full bg-main-500  px-8 py-4 text-3xl font-bold text-[#fff] hover:bg-main-400 disabled:bg-main-300"

@@ -35,6 +35,7 @@ function Overview() {
   const onlinePanelsCount = panels.filter(
     (panel) => panel.status === "online",
   ).length;
+
   return (
     <div>
       <h2 className=" mb-8 text-center text-2xl font-bold md:text-3xl lg:text-4xl">
@@ -84,7 +85,7 @@ function Overview() {
             icon={<FaThinkPeaks />}
             title={"Peak performance time"}
             value={
-              time?.startTime && time?.endTime
+              time?.startTime !== undefined && time?.endTime !== undefined
                 ? `${time?.startTime}:00 to ${time?.endTime}:00`
                 : "not enough data"
             }
