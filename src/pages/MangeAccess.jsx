@@ -30,7 +30,12 @@ function MangeAccess() {
       </div>
       <div className=" mx-auto mb-4 mt-[5vh] grid w-[80%] grid-cols-[1fr_2fr] gap-4 border-b-2 border-main-200 pb-4 dark:border-main-700 sm:gap-6 lg:gap-10">
         <div className=" ">
-          <img src="/solar.png" alt="solar panel" className=" max-h-[20vh]" />
+          <img
+            loading="lazy"
+            src="/solar.png"
+            alt="solar panel"
+            className=" max-h-[20vh]"
+          />
         </div>
         <div className=" border-l border-main-200  py-4 pl-3 text-sm dark:border-main-700 sm:pl-6 sm:text-base lg:pl-8 lg:text-xl">
           <h3 className=" bold mb-4 text-lg  sm:text-xl lg:text-2xl">

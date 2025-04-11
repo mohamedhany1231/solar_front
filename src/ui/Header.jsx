@@ -15,6 +15,7 @@ function Header() {
         className="hover:stone-500 h-full py-2  text-xl transition-transform hover:scale-110 "
       >
         <img
+          loading="lazy"
           src={user?.photo || "/no-picture.webp"}
           alt="profile "
           className="h-14 w-14 rounded-full object-cover"

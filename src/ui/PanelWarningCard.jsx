@@ -32,6 +32,7 @@ export function PanelWarningCard({ panel: { name, id, warnings } }) {
     >
       <div className=" flex justify-center md:pt-10">
         <img
+          loading="lazy"
           src="./solar.png"
           alt="solar panel"
           className=" max-h-36 md:max-h-[20vh]"

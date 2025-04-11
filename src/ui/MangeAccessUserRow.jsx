@@ -33,6 +33,7 @@ export function MangeAccessUserRow({ user: { email, photo, name, _id: id } }) {
     <>
       <div className=" mx-auto flex items-center  sm:mx-0">
         <img
+          loading="lazy"
           src={photo || "/no-picture.webp"}
           alt={name}
           className=" h-12 w-12 rounded-full sm:h-16 sm:w-16"

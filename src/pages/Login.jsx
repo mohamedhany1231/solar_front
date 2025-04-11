@@ -45,56 +45,62 @@ function Login() {
         {isLargeScreen && (
           <div className="h-full py-20">
             <img
-              src="/beautiful-alternative-energy-plant-with-solar-panels.jpg"
+              loading="lazy"
+              src="/bg.jpg"
               alt="solar panel img"
               className=" h-full rounded-r-[3rem]    object-cover  brightness-75"
             />
           </div>
         )}
 
-        {isLoadingUser ? (
-          <Loader />
-        ) : (
-          <form
-            className=" flex h-full flex-col px-[2%] py-8 lg:py-20 "
-            onSubmit={handleSubmit(onSubmit)}
-          >
-            <div className=" mt-10 flex grow flex-col gap-4 rounded-3xl  px-8  lg:py-16  ">
-              <h3 className="  text-2xl font-bold md:text-3xl lg:text-4xl  ">
-                <span className=" mb-4 block text-3xl sm:text-4xl md:text-5xl lg:mb-2  lg:text-7xl">
-                  Welcome back!
-                </span>
-                Please log in to access your solar panel dashboard.
-              </h3>
-
-              <p className=" mb-8 text-base tracking-wide text-gray-400 md:text-lg">
-                Monitor, analyze, and optimize your solar panel system. Sign in
-                now.
-              </p>
-              <InputRow
-                fieldName={"email"}
-                type={"email"}
-                register={{ ...register("email") }}
-                error={response?.error}
-                disableDarkMode={true}
-                value={"test@test.com"}
-              />
-              <InputRow
-                fieldName={"password"}
-                type={"password"}
-                register={{ ...register("password") }}
-                disableDarkMode={true}
-                value={"test1234"}
-              />
-              <button
-                className=" text-bold ml-auto mr-4 mt-4 w-fit rounded-full bg-main-500  px-8 py-4 text-3xl font-bold text-[#fff] hover:bg-main-400 disabled:bg-main-300"
-                disabled={isLoading}
-              >
-                Login
-              </button>
-            </div>
-          </form>
-        )}
+        <form
+          className=" flex h-full flex-col px-[2%] py-8 lg:py-20 "
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          <div className=" mt-10 flex grow flex-col gap-4 rounded-3xl  px-8  lg:py-16  ">
+            <h3 className="  text-2xl font-bold md:text-3xl lg:text-4xl  ">
+              <span className=" mb-4 block text-3xl sm:text-4xl md:text-5xl lg:mb-2  lg:text-7xl">
+                Welcome back!
+              </span>
+              Please log in to access your solar panel dashboard.
+            </h3>
+            <p className="  text-base tracking-wide text-gray-400 md:text-lg">
+              Monitor, analyze, and optimize your solar panel system. Sign in
+              now.
+            </p>
+            <p className="mb-12 animate-pulse bg-yellow-100 bg-opacity-20 text-center text-sm font-bold text-yellow-300 sm:text-base">
+              app might take a minute to work ,backend might be still booting!
+            </p>
+            {isLoading ? (
+              <Loader />
+            ) : (
+              <>
+                <InputRow
+                  fieldName={"email"}
+                  type={"email"}
+                  register={{ ...register("email") }}
+                  error={response?.error}
+                  disableDarkMode={true}
+                  value={"test@test.com"}
+                />
+                <InputRow
+                  fieldName={"password"}
+                  type={"password"}
+                  register={{ ...register("password") }}
+                  disableDarkMode={true}
+                  value={"test1234"}
+                />
+              </>
+            )}
+            <button
+              className={`text-bold ml-auto mr-4 mt-4   w-fit rounded-full bg-main-500  px-8 py-4 text-3xl font-bold text-[#fff] hover:bg-main-400 disabled:bg-main-300
+                  ${isLoadingUser ? "cursor-wait opacity-60" : ""}`}
+              disabled={isLoading || isLoadingUser}
+            >
+              {isLoadingUser ? "loading..." : "Login"}
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );

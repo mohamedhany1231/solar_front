@@ -8,12 +8,12 @@ function InputRow({
 }) {
   return (
     <div className=" text-base sm:text-lg md:text-xl ">
-      <div className=" flex justify-between">
+      <div className=" flex  justify-between">
         <label className=" mb-2 block pl-4 capitalize">
           {fieldName === "confirmPassword" ? "confirm password" : fieldName}
         </label>
         {error && (
-          <p className=" ml-auto  inline-block whitespace-nowrap  text-sm font-bold   text-red-500 sm:text-base md:text-lg lg:text-xl ">
+          <p className=" ml-auto inline-block   pl-4   text-sm font-bold   text-red-500 sm:text-base md:text-lg lg:text-xl ">
             ** {error} **
           </p>
         )}

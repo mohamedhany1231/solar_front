@@ -36,6 +36,7 @@ function Profile() {
   return (
     <div className=" relative m-10 mx-auto  flex w-[100%] flex-col items-center overflow-hidden rounded-3xl border-2 p-6   text-center dark:border-main-700 sm:w-[70%]   sm:flex-row sm:justify-start sm:p-0  sm:pr-16  lg:w-[70%]">
       <img
+        loading="lazy"
         src={user?.photo || "/no-picture.webp"}
         alt="profile "
         className="  h-40 w-40 rounded-full object-cover sm:h-60 sm:w-[40%]  sm:rounded-none sm:rounded-r-3xl"

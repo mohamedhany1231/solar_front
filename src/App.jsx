@@ -28,6 +28,16 @@ import { useEffect } from "react";
 
 axios.defaults.withCredentials = true;
 
+const base_url = import.meta.env.PROD
+  ? import.meta.env.VITE_PROD_URL
+  : import.meta.env.VITE_DEV_URL;
+
+const instance = axios.create({
+  baseURL: base_url,
+  withCredentials: true,
+  withXSRFToken: true,
+});
+
 const router = createBrowserRouter([
   {
     element: (
@@ -58,6 +68,15 @@ const router = createBrowserRouter([
 
 function App() {
   const queryClient = new QueryClient();
+
+  //  ping server to wake
+  useEffect(() => {
+    (async () => {
+      try {
+        await instance.get("/panels?page=1&limit=1");
+      } catch (e) {}
+    })();
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
